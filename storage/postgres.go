@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Config struct {
+type Config struct {										
 	Host     string
 	Port     string
 	Password string
