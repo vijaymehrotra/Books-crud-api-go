@@ -48,12 +48,36 @@ docker-compose up --build
 
 ## API Endpoints
 
-GET /books: Retrieves a list of all books.
-POST /books: Creates a new book.
-GET /books/:id: Retrieves a specific book by ID.
-PUT /books/:id: Updates a book by ID.
-DELETE /books/:id: Deletes a book by ID.
-Docker Compose
+GET api/books : Retrieves a list of all books.
+
+GET api/get_book/:id : Retrieves a specific book by ID.
+
+POST api/create_books : Creates a new book.
+
+DELETE api/delete_book/:id : Deletes a book by ID.
+
+``` bash
+## An Example for api/books
+{
+    "Message": "success getting books",
+    "books": [
+        {
+            "id": 1,
+            "Author": "David Goddings 2",
+            "Title": "Cant Hurt Me 2",
+            "Publisher": "Lioncrest 2"
+        },
+        {
+            "id": 2,
+            "Author": "Dale Cranage",
+            "Title": "How to win friends and Influence people",
+            "Publisher": "I dont know"
+        }
+    ]
+}
+```
+
+## Docker Compose
 The docker-compose.yml file defines the services for the API and PostgreSQL database. You can customize the database image and port mappings as needed.
 
 ## Environment Variables
